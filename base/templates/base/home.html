@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="about-me">
+    <div class="container">
+        <div class="profile-img">
+            <img src="{% static 'images/picture_STM.jpeg' %}" alt="Profile Picture">
+        </div>
+        <div class="bio">
+            <h1>About Me</h1>
+            <p>I am Shadmanee Tasneem Mulk, an aspiring PhD researcher in Computer Science and Engineering, driven by my passion for Human-Centered Computing, Computational Social Science, and AI for Digital Health and Accessibility. With a strong academic foundation and a research-oriented mindset, I strive to create impactful and ethical AI systems that enhance human experiences.</p>
+            <p>I hold a BS in Computer Science and Engineering from the Military Institute of Science and Technology, where I graduated with a CGPA of 3.91/4.00, securing 1st position in my class (equivalent to Summa Cum Laude).</p>
+            <p>My research journey includes projects in AI-driven mental health tools, assistive technology, and computational accessibility. My thesis on dimensionality reduction in word classification using surface EMG signals was presented at ICCIT 2024. My work on 'Unlocking Voices,' focused on usability evaluation of speech therapy apps, also gained recognition at ICCIT 2024.</p>
+            <p>As an AI Research Apprentice at IDARE LLC., I contributed to the development of no-code AI tools, optimizing AI computations for industry projects. My experience at BrainStation23 and my involvement in the MIST Mongol Barota (Mars Rover Society) project strengthened my expertise in AI-driven solutions.</p>
+            <p>My research contributions include 'PPDHero,' a platform for supporting mothers with postpartum depression, published in ISDA 2023. I also developed Hydroferma, an IoT-based autonomous hydroponic vertical farming system, applying ML for real-time plant monitoring.</p>
+            <div class="social-icons" id="social-icons">
+                <a href="https://www.facebook.com" target="_blank" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.github.com" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
+                <a href="https://scholar.google.com" target="_blank" class="social-icon google-scholar"><img src="{% static 'images/google-scholar.png' %}" alt="Google Scholar" class="scholar-icon"></a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
