@@ -1,197 +1,153 @@
 body {
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
+    font-family: 'Verdana', serif;
+    font-size: 14px;
+    color: #444;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    overflow-x: hidden;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 35px;
+    transition: background-color 0.3s ease-in-out;
+    background-color: transparent !important;
 }
 
-.logo a {
-    display: flex;
-    align-items: center;
-    
-    img {
-        height: 40px;
-        width: auto;
-        padding: 5px;
-    }
+.navbar-brand img {
+    height: 40px;
+    width: auto;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+.navbar .nav-link {
+    position: relative;
+    font-weight: 300;
+    color: #e0e0e0 !important;
+    margin: 20px;
 }
 
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    color: #414141;
-    text-decoration: none;
-    padding: 20px 35px;
-    transition: 0.4s;
-}
-
-.nav-links a:hover {
-    background-color: #414141;
-    color: #f4f4f4;
-    border-radius: 5px;
-}
-
-.nav-item {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-}
-
-.nav-item.active {
-    background-color: #414141;
-    color: #f4f4f4;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.hamburger {
-    display: none;
-    cursor: pointer;
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: #414141;
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100vh;
-    background-color: #595959;
-    transition: right 0.3s ease-in-out;
-    padding-top: 60px;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-
-    .nav-item {
-        color: white;
-        text-decoration: none;
-        padding: 10px 15px;
-    }
-    
-    .nav-item.active {
-        background-color: #dfdfdf;
-        color: #595959;;
-        border-radius: 5px;
-        font-weight: bold;
-        margin: 20px;
-    }
-}
-
-.sidebar.active {
-    right: 0;
-}
-
-.sidebar-links {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-.sidebar-links li {
-    margin: 10px 0;
-}
-
-.sidebar-links a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-    transition: 0.3s;
-    font-size: 12px;
-}
-
-.sidebar-links a:hover {
-    background-color: #dfdfdf;
-    color: #575757;
-    border-radius: 5px;
-    margin: 10px;
-}
-
-.close-btn {
+.navbar .nav-link::after {
+    content: '';
     position: absolute;
-    top: 10px;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #e0e0e0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-item .active::after {
+    transform: scaleX(1);
+}
+
+.bg-dark.navbar-dark {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-toggler {
+    position: absolute;
     right: 20px;
-    font-size: 24px;
-    background: none;
+    top: 10px;
     border: none;
-    color: #fff;
-    cursor: pointer;
+}
+
+.navbar-toggler-icon {
+    filter: invert(100%);
+}
+
+.hero-section {
+    width: 100vw;
+    height: 100vh;
+    background: url('/static/images/hero-bg.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel {
+    margin: 0px 40px;
+    padding: 0px 60px;
+}
+
+.carousel-item {
+    width: 100%;
+}
+
+/* @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+#animated-text {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid white;
+    width: 0;
+    display: inline-block;
+    animation: typing 3s steps(30, end) forwards;
+} */
+
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 10;
+    /* Ensure they are above other elements */
+    width: auto;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: transparent;
+    /* Make sure arrows are visible */
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
 }
 
 .about-me {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 50px;
+    padding: 50px 0;
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-}
-
-.profile-img img {
-    padding: 20px;
-    width: 580px;
-    height: -webkit-fill-available;
-    object-fit: cover;
-}
-
-.bio {
-    max-width: 600px;
-    padding: 20px;
-    text-align: justify;
-
-    h1 {
-        margin-top: 20px;
-    }
-}
-
-.btn {
-    background-color: #575757;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin: 20px 0px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background-color: #444;
+.about-me img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%;
+    transition: filter 0.5s ease-in-out;
 }
 
 .social-icons {
-    display: flex;
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .social-icon {
-    margin-right: 10px;
-    font-size: 24px;
-    color: #000000;
-    transition: 0.3s;
+    font-size: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
 }
 
 .facebook:hover {
@@ -199,7 +155,7 @@ body {
 }
 
 .linkedin:hover {
-    color:  #0077B5;
+    color: #0077B5;
 }
 
 .instagram:hover {
@@ -209,48 +165,20 @@ body {
 }
 
 .github:hover {
-    color: #000000;
+    color: #fff;
 }
 
-.google-scholar img {
-    width: 28px;
-    height: 26px;
-    transition: 0.3s;
-    filter: grayscale(100%) brightness(50%);
+.gmail:hover {
+    color: #B23121;
 }
 
-.google-scholar:hover img {
-    filter: grayscale(50%) brightness(70%);
-}
-
-@media (max-width: 1300px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-    }
-    
-    .container {
+@media (max-width: 1024px) {
+    .about-me .row {
         flex-direction: column;
         text-align: center;
     }
-    
-    .profile-img img {
-        padding: 20px;
-        width: 380px;
-        height: -webkit-fill-available;
-        object-fit: cover;
-    }
 
-    .bio {
-        max-width: 400px;
-        text-align: justify;
-        font-size: smaller;
-    }
-
-    .social-icons {
-        justify-content: center;
+    .navbar {
+        background: #fff;
     }
 }

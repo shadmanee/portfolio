@@ -1,27 +1,93 @@
+<!-- home.html -->
 {% extends 'base/base.html' %}
+
 {% load static %}
 
 {% block content %}
-<section class="about-me">
-    <div class="container">
-        <div class="profile-img">
-            <img src="{% static 'images/picture_STM.jpeg' %}" alt="Profile Picture">
-        </div>
-        <div class="bio">
-            <h1>About Me</h1>
-            <p>I am Shadmanee Tasneem Mulk, an aspiring PhD researcher in Computer Science and Engineering, driven by my passion for Human-Centered Computing, Computational Social Science, and AI for Digital Health and Accessibility. With a strong academic foundation and a research-oriented mindset, I strive to create impactful and ethical AI systems that enhance human experiences.</p>
-            <p>I hold a BS in Computer Science and Engineering from the Military Institute of Science and Technology, where I graduated with a CGPA of 3.91/4.00, securing 1st position in my class (equivalent to Summa Cum Laude).</p>
-            <p>My research journey includes projects in AI-driven mental health tools, assistive technology, and computational accessibility. My thesis on dimensionality reduction in word classification using surface EMG signals was presented at ICCIT 2024. My work on 'Unlocking Voices,' focused on usability evaluation of speech therapy apps, also gained recognition at ICCIT 2024.</p>
-            <p>As an AI Research Apprentice at IDARE LLC., I contributed to the development of no-code AI tools, optimizing AI computations for industry projects. My experience at BrainStation23 and my involvement in the MIST Mongol Barota (Mars Rover Society) project strengthened my expertise in AI-driven solutions.</p>
-            <p>My research contributions include 'PPDHero,' a platform for supporting mothers with postpartum depression, published in ISDA 2023. I also developed Hydroferma, an IoT-based autonomous hydroponic vertical farming system, applying ML for real-time plant monitoring.</p>
-            <div class="social-icons" id="social-icons">
-                <a href="https://www.facebook.com" target="_blank" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.github.com" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
-                <a href="https://scholar.google.com" target="_blank" class="social-icon google-scholar"><img src="{% static 'images/google-scholar.png' %}" alt="Google Scholar" class="scholar-icon"></a>
+
+<section id="home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container d-flex flex-row align-items-center justify-content-center min-vh-100">
+                    <h1 class="display-4 fw-bold" id="animated-text"></h1>
+                    <h1 class="display-4 fw-bold" id="animated-text-dot"></h1>
+                </div>                
+            </div>
+            <div class="carousel-item">
+                <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+                    <h1 class="display-5 fw-bold">Shadmanee Tasneem Mulk</h1>
+                    <p class="lead name-bangla">শাদমানী তাসনিম মুলক</p>
+                    <p class="fs-6 fst-italic">
+                        <strong>Pronunciation:</strong> /ʃɑːd.mɑː.niː tɑːsˈniːm mʊlk/ &nbsp; | &nbsp;
+                        <strong>Origin:</strong> Persian & Arabic &nbsp; | &nbsp;
+                        <strong>Meaning:</strong> Joy, wisdom, purity & leadership.
+                    </p>
+                </div>
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section id="about" class="py-5">
+    <div class="container">
+        <h2>About Us</h2>
+        <p>We provide the best solutions for your needs.</p>
+    </div>
+</section>
+
+<section id="services" class="py-5 bg-light">
+    <div class="container">
+        <h2>Our Services</h2>
+        <p>Explore our wide range of services.</p>
+    </div>
+</section>
+
+<section id="contact" class="py-5">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us today.</p>
     </div>
 </section>
 {% endblock %}
+
+<!-- 
+<header class="hero-section text-center py-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Hi, I am Shadmanee Tasneem Mulk.</h1>
+        <p class="name-bangla lead">শাদমানী তাসনিম মুলক</p>
+        <p class="name-definition fs-5">
+            <strong>Pronunciation:</strong> /ʃɑːd.mɑː.niː tɑːsˈniːm mʊlk/ <br>
+            <strong>Origin:</strong> Derived from Persian and Arabic roots <br>
+            <strong>Meaning:</strong> 'Shadmanee' symbolizes joy, wisdom, and brilliance, representing a seeker of knowledge blending the art of innovation with deep-rooted understanding. 'Tasneem' refers to a pure fountain in paradise, symbolizing purity, clarity, and a source of divine knowledge. 'Mulk' denotes sovereignty, dominion, or a kingdom, representing strength, leadership, and influence.
+        </p>
+    </div>
+</header>
+
+<section class="about-me py-5" id="about-me">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="{% static 'images/picture_STM.jpeg' %}" class="rounded-circle img-fluid" alt="Profile Picture">
+            </div>
+            <div class="col-md-8">
+                <h1 class="mb-3">About Me</h1>
+                <p class="lead">
+                    Hi, I am Shadmanee Tasneem Mulk. I am an AI Research Intern at IDARE LLC., a Houston-based AutoML startup. I recently graduated
+                    from MIST with a Bachelor's degree in CSE. My passions lie in AI, ML, HCI, NLP, and Computer Vision.
+                </p>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+{% comment %} {% endblock %} {% endcomment %}

@@ -1,27 +1,39 @@
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    const navLinks = document.getElementById("nav-links");
-    if (window.innerWidth > 1024) {
-        sidebar.classList.remove("active");
-    } else {
-        sidebar.classList.toggle("active");
-    }
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const navToggle = document.getElementById("navToggle");
+    const navbarNav = document.getElementById("navbarNav");
+    const navbar = document.getElementById("navbar");
 
-window.addEventListener("resize", function () {
-    if (window.innerWidth > 1024) {
-        document.getElementById("sidebar").classList.remove("active");
-    }
+    navToggle.addEventListener("click", function() {
+        navbarNav.classList.toggle("show");
+    });
 });
 
-// function toggleSocialIcons() {
-//     let socialIcons = document.getElementById("social-icons");
-//     let reachOutBtn = document.getElementById("reach-out-btn");
-//     if (socialIcons.style.display === "none" || socialIcons.style.display === "") {
-//         socialIcons.style.display = "flex";
-//         socialIcons.style.justifyContent = "center";
-//         reachOutBtn.style.transform = "scale(0)";
-//         setTimeout(() => reachOutBtn.style.display = "none", 300);
-//     }
-// }
+document.addEventListener("DOMContentLoaded", function() {
+    const text = "Hi... I am Shadmanee";
+    const dot = "."
+    const animatedText = document.getElementById("animated-text");
+    const animatedTextDot = document.getElementById("animated-text-dot");
+    let index = 0;
 
+    function typeWriter() {
+        if (index < text.length) {
+            setTimeout(typeWriter, 100);
+            animatedText.innerHTML += text.charAt(index);
+            index++;
+        } else {
+            index++;
+            animatedTextDot.innerHTML = dot.charAt(0);
+            blinkDot();
+        }
+    }
+
+    function blinkDot() {
+        let dotVisible = true;
+        setInterval(() => {
+            animatedTextDot.style.color = dotVisible ? "transparent" : "white";
+            dotVisible = !dotVisible;
+        }, 500);
+    }
+
+    typeWriter();
+});
